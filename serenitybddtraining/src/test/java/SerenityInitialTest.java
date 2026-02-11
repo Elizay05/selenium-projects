@@ -1,3 +1,4 @@
+import builders.RegisterUserInfoBuilder;
 import facts.NetflixPlans;
 import models.users.Datum;
 import models.users.RegisterUserInfo;
@@ -56,14 +57,12 @@ public class SerenityInitialTest {
         Actor sayira = Actor.named("Sayira the tester")
                 .whoCan(CallAnApi.at(baseUrl));
 
-        RegisterUserInfo registerUserInfo = new RegisterUserInfo();
-        registerUserInfo.setName("morpheus");
-        registerUserInfo.setJob("leader");
-        registerUserInfo.setEmail("tracey.ramos@reqres.in");
-        registerUserInfo.setPassword("serenity");
-
         sayira.attemptsTo(
-                RegisterUser.withInfo(registerUserInfo)
+                RegisterUser
+                        .withName("morpheus")
+                        .andEmail("tracey.ramos@reqres.in")
+                        .andPassword("serenity")
+                        .andJob("leader")
         );
 
         sayira.should(
@@ -103,5 +102,22 @@ public class SerenityInitialTest {
         sayira.has(
                 new NetflixPlans()
         );
+    }
+
+    @Test
+    public void exampleBuild(){
+        RegisterUserInfo registerUserInfo = RegisterUserInfoBuilder
+                .withName("John Doe")
+                .build();
+
+        RegisterUserInfo registerUserInfo1 = RegisterUserInfoBuilder
+                .withName("John Doe")
+                .andEmail("jhondoe@gmail.com")
+                .andPassword("serenity")
+                .andJob("tester")
+                .build();
+
+        System.out.println(registerUserInfo.toString());
+        System.out.println(registerUserInfo1.toString());
     }
 }

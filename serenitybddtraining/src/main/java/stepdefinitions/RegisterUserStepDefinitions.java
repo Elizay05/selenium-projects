@@ -25,14 +25,20 @@ public class RegisterUserStepDefinitions {
 
     @When("El envia la información requerida para el registro")
     public void elEnviaLaInformaciónRequeridaParaElRegistro() {
+        /*
         RegisterUserInfo registerUserInfo = new RegisterUserInfo();
         registerUserInfo.setName("morpheus");
         registerUserInfo.setJob("leader");
         registerUserInfo.setEmail("tracey.ramos@reqres.in");
         registerUserInfo.setPassword("serenity");
+        */
 
         sayira.attemptsTo(
-                RegisterUser.withInfo(registerUserInfo)
+                RegisterUser
+                        .withName("morpheus")
+                        .andEmail("tracey.ramos@reqres.in")
+                        .andPassword("serenity")
+                        .andJob("leader")
         );
     }
 
