@@ -5,9 +5,9 @@ import io.cucumber.java.Before;
 
 public class CommonHooks {
 
-    @Before("@conbeforehook")
+    @Before("@conbeforehook or @testbackground")
     public void beforeHook() {
-        System.out.println("*************Me ejecuto antes de cada escenario*************");
+        System.out.println("*************Me ejecuto antes de cada escenario y antes del background*************");
     }
 
     @After
