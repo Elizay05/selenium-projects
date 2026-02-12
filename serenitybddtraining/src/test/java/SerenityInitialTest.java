@@ -1,5 +1,13 @@
+import abilities.InteractWithDb;
 import builders.RegisterUserInfoBuilder;
+import database.DatabaseConnectionInfo;
+import database.DatabaseType;
+import database.entity.Example;
 import facts.NetflixPlans;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import models.users.Datum;
 import models.users.RegisterUserInfo;
 import models.users.UpdateUserInfo;
@@ -14,6 +22,9 @@ import tasks.GetNetflixPlans;
 import tasks.GetUsers;
 import tasks.RegisterUser;
 import tasks.UpdateUser;
+
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -119,5 +130,37 @@ public class SerenityInitialTest {
 
         System.out.println(registerUserInfo.toString());
         System.out.println(registerUserInfo1.toString());
+    }
+
+    @Test
+    public void dataBaseConnectionTest(){
+        DatabaseConnectionInfo connectionInfo = DatabaseConnectionInfo
+                .builder()
+                .username("root")
+                .databaseType(DatabaseType.MYSQL)
+                .url("jdbc:mysql://localhost/test_automation")
+                .password("my-secret-pw")
+                .entityNames(Stream.of(
+                        Example.class)
+                        .map(Class::getName)
+                        .collect(Collectors.toList()))
+                .build();
+
+        Actor sayira = Actor.named("Sayira the tester");
+        sayira.can(InteractWithDb.using(connectionInfo));
+
+        EntityManager entityManager = InteractWithDb.as(sayira).getManager();
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+
+        CriteriaQuery<Example> criteriaQuery = criteriaBuilder.createQuery(Example.class);
+
+        Root<Example> userRoot = criteriaQuery.from(Example.class);
+
+        Example queryResult = entityManager
+                .createQuery(criteriaQuery
+                        .select(userRoot))
+                .getSingleResult();
+
+        System.out.println(queryResult);
     }
 }
