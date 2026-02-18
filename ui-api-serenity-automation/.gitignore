@@ -6,6 +6,9 @@ target/
 
 ### IntelliJ IDEA ###
 .idea/
+.idea/encodings.xml
+.idea/vcs.xml
+.idea/copilot.data.migration.ask2agent.xml
 *.iws
 *.iml
 *.ipr
