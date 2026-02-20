@@ -1,5 +1,6 @@
 package com.portfolio.automation.stepdefinitions.api;
 
+import com.portfolio.automation.constants.ApiJsonKeys;
 import com.portfolio.automation.data.UserTestDataBuilder;
 import com.portfolio.automation.models.CreateUserRequest;
 import com.portfolio.automation.tasks.api.PostUserAccount;
@@ -14,6 +15,10 @@ public class PostUserAccountApiStepDefinitions {
         CreateUserRequest request = UserTestDataBuilder
                 .aUser()
                 .build();
+
+        theActorInTheSpotlight().remember(ApiJsonKeys.EMAIL, request.getEmail());
+        theActorInTheSpotlight().remember(ApiJsonKeys.PASSWORD, request.getPassword());
+
         theActorInTheSpotlight().attemptsTo(PostUserAccount.withData(request));
     }
 
