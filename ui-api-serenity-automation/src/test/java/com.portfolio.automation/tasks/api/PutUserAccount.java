@@ -5,23 +5,24 @@ import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.rest.interactions.Post;
+import net.serenitybdd.screenplay.rest.interactions.Put;
 
 import java.util.Map;
 
-public class PostVerifyLogin implements Task {
+public class PutUserAccount implements Task {
 
-    private final String endpoint = ApiEndpoints.VERIFY_LOGIN;
+    private final String endpoint = ApiEndpoints.UPDATE_ACCOUNT;
     private final Map<String, Object> params;
 
-    public PostVerifyLogin(Map<String, Object> params) {
+    public PutUserAccount(Map<String, Object> params) {
         this.params = params;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
-                Post.to(endpoint)
+                Put.to(endpoint)
                         .with(req -> req
                                 .contentType(ContentType.URLENC)
                                 .formParams(params))
@@ -30,7 +31,7 @@ public class PostVerifyLogin implements Task {
         System.out.println(SerenityRest.lastResponse().asString());
     }
 
-    public static PostVerifyLogin withParams(Map<String, Object> params) {
-        return new PostVerifyLogin(params);
+    public static PutUserAccount withParams(Map<String, Object> params) {
+        return new PutUserAccount(params);
     }
 }

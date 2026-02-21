@@ -1,22 +1,21 @@
 package com.portfolio.automation.tasks.api;
 
 import com.portfolio.automation.constants.ApiEndpoints;
-import com.portfolio.automation.constants.ApiJsonKeys;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Delete;
 
+import java.util.Map;
+
 public class DeleteUserAccount implements Task {
 
     private final String endpoint = ApiEndpoints.DELETE_ACCOUNT;
-    private final String email;
-    private final String password;
+    private final Map<String, Object> params;
 
-    public DeleteUserAccount(String email, String password) {
-        this.email = email;
-        this.password = password;
+    public DeleteUserAccount(Map<String, Object> params) {
+        this.params = params;
     }
 
     @Override
@@ -25,14 +24,13 @@ public class DeleteUserAccount implements Task {
                 Delete.from(endpoint)
                         .with(req -> req
                                 .contentType(ContentType.URLENC)
-                                .formParam(ApiJsonKeys.EMAIL, email)
-                                .formParam(ApiJsonKeys.PASSWORD, password))
+                                .formParams(params))
         );
 
         System.out.println(SerenityRest.lastResponse().asString());
     }
 
-    public static DeleteUserAccount withCredentials(String email, String password) {
-        return new DeleteUserAccount(email, password);
+    public static DeleteUserAccount withParams(Map<String, Object> params) {
+        return new DeleteUserAccount(params);
     }
 }

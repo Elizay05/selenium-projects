@@ -19,7 +19,6 @@ Feature: Automation Exercise - API - User Account - Delete Account
     Then the API response code should be 400
     And the API response message should be "Bad request, email parameter is missing in DELETE request."
 
-
   Scenario: User cannot delete account when password is missing
     Given the user is connected to the API
     When they delete an account without password

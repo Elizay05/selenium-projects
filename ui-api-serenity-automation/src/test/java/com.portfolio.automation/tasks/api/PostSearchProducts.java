@@ -7,13 +7,15 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Post;
 
+import java.util.Map;
+
 public class PostSearchProducts implements Task {
 
     private final String endpoint = ApiEndpoints.SEARCH_PRODUCT;
-    private final String term;
+    private final Map<String, Object> params;
 
-    public PostSearchProducts(String term) {
-        this.term = term;
+    public PostSearchProducts(Map<String, Object> params) {
+        this.params = params;
     }
 
     @Override
@@ -22,13 +24,13 @@ public class PostSearchProducts implements Task {
                 Post.to(endpoint)
                         .with(req -> req
                                 .contentType(ContentType.URLENC)
-                                .formParams("search_product", term))
+                                .formParams(params))
         );
 
         System.out.println(SerenityRest.lastResponse().asString());
     }
 
-    public static PostSearchProducts withTerm(String term) {
-        return new PostSearchProducts(term);
+    public static PostSearchProducts withParams(Map<String, Object> params) {
+        return new PostSearchProducts(params);
     }
 }
