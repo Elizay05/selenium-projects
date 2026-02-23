@@ -1,7 +1,6 @@
 package com.portfolio.automation.stepdefinitions.api;
 
 import com.portfolio.automation.constants.ApiJsonKeys;
-import com.portfolio.automation.tasks.api.DeleteUserAccount;
 import com.portfolio.automation.tasks.api.PutUserAccount;
 import com.portfolio.automation.utils.ParamsBuilder;
 import io.cucumber.java.en.When;

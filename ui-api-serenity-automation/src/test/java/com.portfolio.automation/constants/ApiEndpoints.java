@@ -10,4 +10,5 @@ public class ApiEndpoints {
     public static final String VERIFY_LOGIN = "/verifyLogin";
     public static final String DELETE_ACCOUNT = "/deleteAccount";
     public static final String UPDATE_ACCOUNT = "/updateAccount";
+    public static final String GET_USER_DETAIL_BY_EMAIL = "/getUserDetailByEmail";
 }
