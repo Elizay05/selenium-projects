@@ -1,4 +1,4 @@
-package com.portfolio.automation.constants;
+package com.portfolio.automation.constants.api;
 
 public class ApiEndpoints {
     private ApiEndpoints() {}

@@ -1,5 +1,7 @@
 package com.portfolio.automation.ui;
 
+import com.portfolio.automation.constants.ui.UiConstants;
+import com.portfolio.automation.constants.ui.UiRoutes;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class HomePage {
@@ -7,8 +9,8 @@ public class HomePage {
     private HomePage() {
     }
 
-    public static final String URL = "https://automationexercise.com/";
+    public static final String URL = UiConstants.BASE_URL + "/";
 
     public static final Target TEST_CASES_BUTTON = Target.the("Test Cases button")
-            .locatedBy("a[href='/test_cases']");
+            .locatedBy("//a[@href='" + UiRoutes.TEST_CASES + "']");
 }

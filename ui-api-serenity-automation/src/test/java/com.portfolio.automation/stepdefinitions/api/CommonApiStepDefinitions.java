@@ -1,6 +1,6 @@
 package com.portfolio.automation.stepdefinitions.api;
 
-import com.portfolio.automation.constants.ApiConstants;
+import com.portfolio.automation.constants.api.ApiConstants;
 import com.portfolio.automation.questions.api.ApiResponseCode;
 import com.portfolio.automation.questions.api.ApiResponseMessage;
 import com.portfolio.automation.questions.api.ProductsListSize;

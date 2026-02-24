@@ -1,6 +1,6 @@
 package com.portfolio.automation.questions.api;
 
-import com.portfolio.automation.constants.ApiJsonKeys;
+import com.portfolio.automation.constants.api.ApiJsonKeys;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

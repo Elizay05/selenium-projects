@@ -1,6 +1,6 @@
 package com.portfolio.automation.tasks.api;
 
-import com.portfolio.automation.constants.ApiEndpoints;
+import com.portfolio.automation.constants.api.ApiEndpoints;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

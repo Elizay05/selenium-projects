@@ -1,6 +1,6 @@
 package com.portfolio.automation.tasks.api;
 
-import com.portfolio.automation.constants.ApiEndpoints;
+import com.portfolio.automation.constants.api.ApiEndpoints;
 import com.portfolio.automation.models.CreateUserRequest;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;

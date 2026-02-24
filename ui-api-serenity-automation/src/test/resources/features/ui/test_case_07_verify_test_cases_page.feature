@@ -1,5 +1,5 @@
 @ui
-Feature: Verify Test Cases page
+Feature: Automation Exercise - UI - Verify Test Cases page
 
   Scenario: User can open the Test Cases page from home
     Given the user is browsing Automation Exercise
