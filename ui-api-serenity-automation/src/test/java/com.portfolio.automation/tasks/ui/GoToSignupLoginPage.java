@@ -9,17 +9,17 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class GoToTestCasesPage implements Task {
+public class GoToSignupLoginPage implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(HomePage.TEST_CASES_BUTTON, isVisible()).forNoMoreThan(10).seconds(),
-                SafeClick.on(HomePage.TEST_CASES_BUTTON)
+                WaitUntil.the(HomePage.SIGNUP_LOGIN_BUTTON, isVisible()).forNoMoreThan(10).seconds(),
+                SafeClick.on(HomePage.SIGNUP_LOGIN_BUTTON)
         );
     }
 
-    public static GoToTestCasesPage fromHome() {
-        return Tasks.instrumented(GoToTestCasesPage.class);
+    public static GoToSignupLoginPage fromHome() {
+        return Tasks.instrumented(GoToSignupLoginPage.class);
     }
 }

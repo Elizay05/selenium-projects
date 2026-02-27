@@ -1,7 +1,7 @@
 package com.portfolio.automation.stepdefinitions.api;
 
 import com.portfolio.automation.constants.api.ApiJsonKeys;
-import com.portfolio.automation.data.UserTestDataBuilder;
+import com.portfolio.automation.data.api.UserTestDataBuilder;
 import com.portfolio.automation.models.CreateUserRequest;
 import com.portfolio.automation.tasks.api.PostUserAccount;
 import io.cucumber.java.en.When;

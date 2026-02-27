@@ -1,4 +1,5 @@
-package com.portfolio.automation.data;
+package com.portfolio.automation.data.api;
+
 
 import com.portfolio.automation.models.CreateUserRequest;
 
