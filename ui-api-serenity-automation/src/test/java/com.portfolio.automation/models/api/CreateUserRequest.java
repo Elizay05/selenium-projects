@@ -1,4 +1,4 @@
-package com.portfolio.automation.models;
+package com.portfolio.automation.models.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

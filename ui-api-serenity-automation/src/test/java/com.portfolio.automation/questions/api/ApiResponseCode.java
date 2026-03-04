@@ -1,6 +1,6 @@
 package com.portfolio.automation.questions.api;
 
-import com.portfolio.automation.models.ApiResponse;
+import com.portfolio.automation.models.api.ApiResponse;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

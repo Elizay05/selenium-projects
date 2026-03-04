@@ -1,6 +1,7 @@
 package com.portfolio.automation.tasks.ui;
 
-import com.portfolio.automation.data.ui.UiRegistrationData;
+import com.portfolio.automation.constants.ui.ActorMemoryKeys;
+import com.portfolio.automation.models.ui.UiRegistrationData;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -21,6 +22,8 @@ public class RegisterNewUser implements Task {
                 CompleteAddressInformation.with(data),
                 CreateAccount.now()
         );
+
+        actor.remember(ActorMemoryKeys.REGISTERED_USER, data);
     }
 
     public static RegisterNewUser withDefaultData() {

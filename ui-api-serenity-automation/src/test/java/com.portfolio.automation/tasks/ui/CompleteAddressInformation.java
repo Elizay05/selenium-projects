@@ -1,15 +1,12 @@
 package com.portfolio.automation.tasks.ui;
 
-import com.portfolio.automation.data.ui.UiRegistrationData;
+import com.portfolio.automation.models.ui.UiRegistrationData;
 import com.portfolio.automation.ui.AccountInfoPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.waits.WaitUntil;
-
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class CompleteAddressInformation implements Task {
 

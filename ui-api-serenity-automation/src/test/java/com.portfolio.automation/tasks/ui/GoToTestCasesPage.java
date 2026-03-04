@@ -14,7 +14,7 @@ public class GoToTestCasesPage implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(HomePage.TEST_CASES_BUTTON, isVisible()).forNoMoreThan(10).seconds(),
+                WaitUntil.the(HomePage.TEST_CASES_BUTTON, isVisible()).forNoMoreThan(5).seconds(),
                 SafeClick.on(HomePage.TEST_CASES_BUTTON)
         );
     }

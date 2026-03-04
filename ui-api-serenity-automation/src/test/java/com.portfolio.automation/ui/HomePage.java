@@ -16,4 +16,7 @@ public class HomePage {
 
     public static final Target SIGNUP_LOGIN_BUTTON = Target.the("Signup/Login button")
             .locatedBy("//a[@href='" + UiRoutes.SIGNUP_LOGIN + "']");
+
+    public static final Target CONTACT_US_BUTTON = Target.the("Contact Us button")
+            .locatedBy("//a[@href='" + UiRoutes.CONTACT_US + "']");
 }

@@ -1,4 +1,4 @@
-package com.portfolio.automation.models;
+package com.portfolio.automation.models.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

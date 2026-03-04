@@ -20,4 +20,7 @@ public class AccountStatusPage {
 
     public static final Target DELETE_ACCOUNT_BUTTON = Target.the("delete account button")
             .locatedBy("//a[@href='/delete_account']");
+
+    public static final Target LOGOUT_BUTTON = Target.the("logout button")
+            .locatedBy("//a[normalize-space()='Logout']");
 }

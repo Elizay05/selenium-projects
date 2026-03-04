@@ -1,6 +1,6 @@
 package com.portfolio.automation.tasks.ui;
 
-import com.portfolio.automation.data.ui.UiRegistrationData;
+import com.portfolio.automation.models.ui.UiRegistrationData;
 import com.portfolio.automation.interactions.ui.SafeClick;
 import com.portfolio.automation.ui.SignupLoginPage;
 import net.serenitybdd.screenplay.Actor;
@@ -22,7 +22,7 @@ public class CompleteSignupForm implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(SignupLoginPage.SIGNUP_NAME, isVisible()).forNoMoreThan(10).seconds(),
+                WaitUntil.the(SignupLoginPage.SIGNUP_NAME, isVisible()).forNoMoreThan(5).seconds(),
                 Enter.theValue(data.getName()).into(SignupLoginPage.SIGNUP_NAME),
                 Enter.theValue(data.getEmail()).into(SignupLoginPage.SIGNUP_EMAIL),
                 SafeClick.on(SignupLoginPage.SIGNUP_BUTTON)

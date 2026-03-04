@@ -1,8 +1,13 @@
 package com.portfolio.automation.stepdefinitions.ui;
 
+import com.portfolio.automation.questions.ui.AccountStatus;
+import com.portfolio.automation.tasks.ui.DeleteAccount;
+import com.portfolio.automation.tasks.ui.GoToSignupLoginPage;
+import com.portfolio.automation.tasks.ui.Logout;
 import com.portfolio.automation.tasks.ui.OpenHomePage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -10,6 +15,7 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.openqa.selenium.WebDriver;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CommonUiStepDefinitions {
@@ -31,5 +37,38 @@ public class CommonUiStepDefinitions {
     @When("they open the home page")
     public void theyOpenTheHomePage() {
         theActorInTheSpotlight().attemptsTo(OpenHomePage.now());
+    }
+
+    @When("they navigate to Signup Login")
+    public void theyNavigateToSignupLogin() {
+        theActorInTheSpotlight().attemptsTo(GoToSignupLoginPage.fromHome());
+    }
+
+    @Then("they should be logged in")
+    public void theyShouldBeLoggedIn() {
+        theActorInTheSpotlight().should(
+                seeThat(AccountStatus.isLoggedIn())
+        );
+    }
+
+    @When("they delete the account")
+    public void theyDeleteTheAccount() {
+        theActorInTheSpotlight().attemptsTo(
+                DeleteAccount.now()
+        );
+    }
+
+    @Then("the account should be deleted")
+    public void theAccountShouldBeDeleted() {
+        theActorInTheSpotlight().should(
+                seeThat(AccountStatus.isDeleted())
+        );
+    }
+
+    @When("they logout")
+    public void theyLogout() {
+        theActorInTheSpotlight().attemptsTo(
+                Logout.now()
+        );
     }
 }

@@ -12,3 +12,17 @@ Feature: Automation Exercise - UI - Register user
     Then they should be logged in
     When they delete the account
     Then the account should be deleted
+
+  Scenario: User cannot register with an existing email
+    Given the user is browsing Automation Exercise
+    When they open the home page
+    And they navigate to Signup Login
+    Then the New User Signup section should be visible
+    When they register a new account
+    Then the account should be created
+    When they continue after account creation
+    And they logout
+    And they navigate to Signup Login
+    Then the New User Signup section should be visible
+    When they try to register with an existing email
+    Then an existing email error message should be displayed

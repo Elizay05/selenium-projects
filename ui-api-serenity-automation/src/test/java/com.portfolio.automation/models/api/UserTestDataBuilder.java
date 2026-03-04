@@ -1,7 +1,5 @@
-package com.portfolio.automation.data.api;
+package com.portfolio.automation.models.api;
 
-
-import com.portfolio.automation.models.CreateUserRequest;
 
 public class UserTestDataBuilder {
 

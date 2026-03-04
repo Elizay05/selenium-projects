@@ -1,4 +1,4 @@
-package com.portfolio.automation.data.ui;
+package com.portfolio.automation.models.ui;
 
 public class UiRegistrationData {
 
