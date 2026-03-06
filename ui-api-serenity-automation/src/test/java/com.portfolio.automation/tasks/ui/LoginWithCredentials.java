@@ -1,7 +1,7 @@
 package com.portfolio.automation.tasks.ui;
 
 import com.portfolio.automation.interactions.ui.SafeClick;
-import com.portfolio.automation.ui.SignupLoginPage;
+import com.portfolio.automation.ui.pages.SignupLoginPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

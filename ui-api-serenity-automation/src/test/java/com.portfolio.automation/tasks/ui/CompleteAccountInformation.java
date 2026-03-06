@@ -2,7 +2,7 @@ package com.portfolio.automation.tasks.ui;
 
 import com.portfolio.automation.models.ui.UiRegistrationData;
 import com.portfolio.automation.interactions.ui.SafeClick;
-import com.portfolio.automation.ui.AccountInfoPage;
+import com.portfolio.automation.ui.pages.AccountInfoPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

@@ -1,7 +1,7 @@
 package com.portfolio.automation.tasks.ui;
 
 import com.portfolio.automation.models.ui.UiContactData;
-import com.portfolio.automation.ui.ContactUsPage;
+import com.portfolio.automation.ui.pages.ContactUsPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

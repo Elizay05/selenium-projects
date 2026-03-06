@@ -1,7 +1,8 @@
-package com.portfolio.automation.ui;
+package com.portfolio.automation.ui.pages;
 
 import com.portfolio.automation.constants.ui.UiConstants;
 import com.portfolio.automation.constants.ui.UiRoutes;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class HomePage {
@@ -19,4 +20,7 @@ public class HomePage {
 
     public static final Target CONTACT_US_BUTTON = Target.the("Contact Us button")
             .locatedBy("//a[@href='" + UiRoutes.CONTACT_US + "']");
+
+    public static final Target CART_BUTTON = Target.the("Cart button")
+            .locatedBy("//a[@href='/view_cart']");
 }

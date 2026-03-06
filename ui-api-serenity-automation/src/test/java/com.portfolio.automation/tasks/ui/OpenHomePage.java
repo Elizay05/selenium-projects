@@ -1,6 +1,6 @@
 package com.portfolio.automation.tasks.ui;
 
-import com.portfolio.automation.ui.HomePage;
+import com.portfolio.automation.ui.pages.HomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

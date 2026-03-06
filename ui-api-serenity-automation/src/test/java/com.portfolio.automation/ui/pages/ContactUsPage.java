@@ -1,4 +1,4 @@
-package com.portfolio.automation.ui;
+package com.portfolio.automation.ui.pages;
 
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;

@@ -6,8 +6,8 @@ import com.portfolio.automation.interactions.ui.SafeClick;
 import com.portfolio.automation.models.ui.UiContactData;
 import com.portfolio.automation.questions.ui.CurrentUrl;
 import com.portfolio.automation.tasks.ui.FillContactForm;
-import com.portfolio.automation.ui.ContactUsPage;
-import com.portfolio.automation.ui.HomePage;
+import com.portfolio.automation.ui.pages.ContactUsPage;
+import com.portfolio.automation.ui.pages.HomePage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 

@@ -8,7 +8,7 @@ import com.portfolio.automation.questions.ui.CurrentUrl;
 import com.portfolio.automation.questions.ui.AccountStatus;
 import com.portfolio.automation.tasks.ui.ContinueAfterAccountCreation;
 import com.portfolio.automation.tasks.ui.RegisterNewUser;
-import com.portfolio.automation.ui.SignupLoginPage;
+import com.portfolio.automation.ui.pages.SignupLoginPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actions.Enter;

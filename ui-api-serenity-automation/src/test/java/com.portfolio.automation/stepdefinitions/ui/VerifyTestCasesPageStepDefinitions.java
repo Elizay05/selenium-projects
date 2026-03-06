@@ -3,7 +3,7 @@ package com.portfolio.automation.stepdefinitions.ui;
 import com.portfolio.automation.constants.ui.UiRoutes;
 import com.portfolio.automation.questions.ui.CurrentUrl;
 import com.portfolio.automation.tasks.ui.GoToTestCasesPage;
-import com.portfolio.automation.ui.TestCasesPage;
+import com.portfolio.automation.ui.pages.TestCasesPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 

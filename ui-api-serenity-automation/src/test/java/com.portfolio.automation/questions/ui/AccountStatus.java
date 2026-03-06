@@ -1,7 +1,7 @@
 package com.portfolio.automation.questions.ui;
 
-import com.portfolio.automation.ui.AccountStatusPage;
-import com.portfolio.automation.ui.SignupLoginPage;
+import com.portfolio.automation.ui.pages.AccountStatusPage;
+import com.portfolio.automation.ui.pages.SignupLoginPage;
 import net.serenitybdd.screenplay.Question;
 
 public class AccountStatus {

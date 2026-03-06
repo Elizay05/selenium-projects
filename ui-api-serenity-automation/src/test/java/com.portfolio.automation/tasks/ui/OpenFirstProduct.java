@@ -1,23 +1,23 @@
 package com.portfolio.automation.tasks.ui;
 
 import com.portfolio.automation.interactions.ui.SafeClick;
-import com.portfolio.automation.ui.pages.AccountInfoPage;
+import com.portfolio.automation.ui.pages.ProductsPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Scroll;
 
-public class CreateAccount implements Task {
+public class OpenFirstProduct implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Scroll.to(AccountInfoPage.CREATE_ACCOUNT_BUTTON),
-                SafeClick.on(AccountInfoPage.CREATE_ACCOUNT_BUTTON)
+                Scroll.to(ProductsPage.FIRST_VIEW_PRODUCT),
+                SafeClick.on(ProductsPage.FIRST_VIEW_PRODUCT)
         );
     }
 
-    public static CreateAccount now() {
-        return Tasks.instrumented(CreateAccount.class);
+    public static OpenFirstProduct now() {
+        return Tasks.instrumented(OpenFirstProduct.class);
     }
 }
