@@ -7,7 +7,10 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features/ui",
-        glue = "com.portfolio.automation.stepdefinitions"
+        glue = {
+                "com.portfolio.automation.stepdefinitions",
+                "com.portfolio.automation.config"
+        }
 )
 public class UiTestSuite {
 }

@@ -17,7 +17,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 import static org.hamcrest.Matchers.containsString;
 
-public class ContactUsFormStepDefinition {
+public class ContactUsFormStepDefinitions {
 
     @When("they navigate to Contact Us")
     public void theyNavigateToContactUs() {

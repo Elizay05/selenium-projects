@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -23,6 +24,7 @@ public class CompleteSignupForm implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(SignupLoginPage.SIGNUP_NAME, isVisible()).forNoMoreThan(5).seconds(),
+                Scroll.to(SignupLoginPage.SIGNUP_NAME),
                 Enter.theValue(data.getName()).into(SignupLoginPage.SIGNUP_NAME),
                 Enter.theValue(data.getEmail()).into(SignupLoginPage.SIGNUP_EMAIL),
                 SafeClick.on(SignupLoginPage.SIGNUP_BUTTON)

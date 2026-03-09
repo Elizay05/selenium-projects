@@ -5,6 +5,7 @@ Feature: Automation Exercise - UI - Login user
     Given the user is browsing Automation Exercise
     When they open the home page
     And they navigate to Signup Login
+    Then the New User Signup section should be visible
     Then they register a new account
     And they continue after account creation
     And they logout

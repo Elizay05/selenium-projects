@@ -5,5 +5,5 @@ Feature: Automation Exercise - UI - Verify All Products page
     Given the user is browsing Automation Exercise
     When they open the home page
     And they navigate to products page
-    Then the All Products page title should be visible
+    Then the products page should be visible
     And the products list should be visible

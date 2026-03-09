@@ -1,11 +1,14 @@
-package com.portfolio.automation.ui.components;
+package com.portfolio.automation.ui.pages;
 
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class CartComponent {
+public class CartPage {
 
-    private CartComponent(){}
+    private CartPage(){}
+
+    public static final Target CART_SECTION = Target.the("Cart section")
+            .located(By.id("cart_items"));
 
     public static final Target CART_PRODUCTS =
             Target.the("Products in cart")
@@ -26,4 +29,13 @@ public class CartComponent {
     public static final Target PRODUCT_TOTAL =
             Target.the("Product total")
                     .located(By.cssSelector(".cart_total_price"));
+
+    public static final Target PROCEED_TO_CHECKOUT_BUTTON =
+            Target.the("Proceed to checkout button")
+                    .located(By.cssSelector(".check_out"));
+
+    public static final Target REMOVE_PRODUCT_BUTTON_BY_NAME =
+            Target.the("Remove button for product {0}")
+                    .locatedBy("//td[@class='cart_description']//a[text()='{0}']/ancestor::tr//a[@class='cart_quantity_delete']");
+
 }

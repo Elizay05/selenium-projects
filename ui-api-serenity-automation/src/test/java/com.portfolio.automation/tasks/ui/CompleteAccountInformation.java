@@ -28,6 +28,7 @@ public class CompleteAccountInformation implements Task {
                 WaitUntil.the(AccountInfoPage.ENTER_ACCOUNT_INFORMATION_TITLE, isVisible())
                         .forNoMoreThan(10).seconds(),
 
+                Scroll.to(AccountInfoPage.TITLE_MRS),
                 SafeClick.on(AccountInfoPage.TITLE_MRS),
                 Enter.theValue(data.getPassword()).into(AccountInfoPage.PASSWORD),
                 SelectFromOptions.byValue(data.getDay()).from(AccountInfoPage.DAY),

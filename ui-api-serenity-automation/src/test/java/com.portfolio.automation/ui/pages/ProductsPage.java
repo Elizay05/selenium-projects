@@ -38,27 +38,15 @@ public class ProductsPage {
             Target.the("Product list")
                     .located(By.xpath("//div[@class='product-image-wrapper']"));
 
-    public static final Target FIRST_PRODUCT =
-            Target.the("First product")
-                    .located(By.xpath("(//div[@class='product-image-wrapper'])[1]"));
-
-    public static final Target SECOND_PRODUCT =
-            Target.the("Second product")
-                    .located(By.xpath("(//div[@class='product-image-wrapper'])[2]"));
-
-    public static final Target FIRST_ADD_TO_CART =
-            Target.the("Add first product to cart")
-                    .located(By.cssSelector("a[data-product-id='1']"));
-
-    public static final Target SECOND_ADD_TO_CART =
-            Target.the("Add second product to cart")
-                    .located(By.cssSelector("a[data-product-id='2']"));
+    public static final Target ADD_TO_CART_BUTTON_BY_NAME =
+            Target.the("Add to cart button for product {0}")
+                    .locatedBy("//p[text()='{0}']/ancestor::div[@class='productinfo text-center']//a[contains(@class,'add-to-cart')]");
 
     public static final Target CONTINUE_SHOPPING_BUTTON =
             Target.the("Continue shopping button")
                     .located(By.xpath("//button[text()='Continue Shopping']"));
 
-    public static final Target VIEW_CART_BUTTON =
-            Target.the("View cart button")
-                    .located(By.xpath("//u[text()='View Cart']"));
+    public static final Target PRODUCT_CARDS =
+            Target.the("Product cards")
+                    .locatedBy(".product-image-wrapper");
 }

@@ -23,8 +23,8 @@ public class VerifyProductsPageStepDefinitions {
         );
     }
 
-    @Then("the All Products page title should be visible")
-    public void theAllProductsPageTitleShouldBeVisible() {
+    @Then("the products page should be visible")
+    public void theProductsPageShouldBeVisible() {
         theActorInTheSpotlight().should(seeThat(CurrentUrl.current(), containsString(UiRoutes.PRODUCTS)));
         theActorInTheSpotlight().should(seeThat(the((ProductsPage.ALL_PRODUCTS_TITLE)), isVisible()));
     }

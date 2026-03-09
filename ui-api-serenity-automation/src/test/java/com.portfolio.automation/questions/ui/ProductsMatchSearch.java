@@ -9,7 +9,7 @@ public class ProductsMatchSearch implements Question<Boolean> {
     private final String searchTerm;
 
     public ProductsMatchSearch(String searchTerm) {
-        this.searchTerm = searchTerm;
+        this.searchTerm = searchTerm.toLowerCase();
     }
 
     @Override
@@ -17,11 +17,8 @@ public class ProductsMatchSearch implements Question<Boolean> {
 
         return ProductsPage.PRODUCT_LIST.resolveAllFor(actor)
                 .stream()
-                .allMatch(product ->
-                        product.getText()
-                                .toLowerCase()
-                                .contains(searchTerm.toLowerCase())
-                );
+                .map(product -> product.findBy(".productinfo p").getText().toLowerCase())
+                .allMatch(name -> name.contains(searchTerm));
     }
 
     public static ProductsMatchSearch withTerm(String searchTerm){
