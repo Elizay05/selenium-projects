@@ -26,8 +26,6 @@ public class PostSearchProducts implements Task {
                                 .contentType(ContentType.URLENC)
                                 .formParams(params))
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static PostSearchProducts withParams(Map<String, Object> params) {

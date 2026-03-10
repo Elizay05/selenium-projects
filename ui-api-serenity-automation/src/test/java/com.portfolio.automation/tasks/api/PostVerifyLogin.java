@@ -26,8 +26,6 @@ public class PostVerifyLogin implements Task {
                                 .contentType(ContentType.URLENC)
                                 .formParams(params))
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static PostVerifyLogin withParams(Map<String, Object> params) {

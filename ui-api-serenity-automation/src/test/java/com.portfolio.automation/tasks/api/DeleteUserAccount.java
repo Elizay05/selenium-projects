@@ -26,8 +26,6 @@ public class DeleteUserAccount implements Task {
                                 .contentType(ContentType.URLENC)
                                 .formParams(params))
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static DeleteUserAccount withParams(Map<String, Object> params) {

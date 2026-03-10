@@ -25,8 +25,6 @@ public class GetUserDetailByEmail implements Task {
                         .with(req -> req
                                 .queryParams(params))
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static GetUserDetailByEmail withEmail(Map<String, Object> params) {

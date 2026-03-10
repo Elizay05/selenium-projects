@@ -27,8 +27,6 @@ public class PutUserAccount implements Task {
                                 .contentType(ContentType.URLENC)
                                 .formParams(params))
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static PutUserAccount withParams(Map<String, Object> params) {

@@ -15,8 +15,6 @@ public class PutBrands implements Task {
         actor.attemptsTo(
                 Put.to(endpoint)
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static PutBrands toApi() {

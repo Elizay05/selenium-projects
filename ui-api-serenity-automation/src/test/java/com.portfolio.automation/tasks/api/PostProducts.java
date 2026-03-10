@@ -15,8 +15,6 @@ public class PostProducts implements Task {
         actor.attemptsTo(
                 Post.to(endpoint)
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static PostProducts toApi() {

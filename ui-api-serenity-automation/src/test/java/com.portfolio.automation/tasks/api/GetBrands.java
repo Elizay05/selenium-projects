@@ -15,8 +15,6 @@ public class GetBrands implements Task {
         actor.attemptsTo(
                 Get.resource(endpoint)
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static GetBrands fromApi() {

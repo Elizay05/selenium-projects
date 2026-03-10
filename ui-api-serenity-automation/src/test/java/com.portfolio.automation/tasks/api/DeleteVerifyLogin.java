@@ -15,8 +15,6 @@ public class DeleteVerifyLogin implements Task {
         actor.attemptsTo(
                 Delete.from(endpoint)
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static DeleteVerifyLogin toApi() {

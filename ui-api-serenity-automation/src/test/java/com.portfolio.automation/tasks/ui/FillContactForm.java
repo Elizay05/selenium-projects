@@ -1,5 +1,6 @@
 package com.portfolio.automation.tasks.ui;
 
+import com.portfolio.automation.interactions.ui.SafeClick;
 import com.portfolio.automation.models.ui.UiContactData;
 import com.portfolio.automation.ui.pages.ContactUsPage;
 import net.serenitybdd.screenplay.Actor;
@@ -8,6 +9,7 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.Upload;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.WebDriver;
@@ -44,7 +46,8 @@ public class FillContactForm implements Task {
                 Upload.theFile(Paths.get(data.getFilePath()))
                         .to(ContactUsPage.UPLOAD_FILE),
 
-                Click.on(ContactUsPage.SUBMIT_BUTTON)
+                Scroll.to(ContactUsPage.SUBMIT_BUTTON),
+                SafeClick.on(ContactUsPage.SUBMIT_BUTTON)
         );
 
         new WebDriverWait(driver, Duration.ofSeconds(5))

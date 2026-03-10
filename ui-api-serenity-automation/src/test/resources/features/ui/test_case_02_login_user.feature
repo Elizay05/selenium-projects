@@ -6,8 +6,10 @@ Feature: Automation Exercise - UI - Login user
     When they open the home page
     And they navigate to Signup Login
     Then the New User Signup section should be visible
-    Then they register a new account
-    And they continue after account creation
+    When they register a new account
+    Then the account should be created
+    When they continue after account creation
+    Then they should be logged in
     And they logout
     And they navigate to Signup Login
     Then the Login to your account section should be visible

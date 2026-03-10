@@ -49,8 +49,6 @@ public class PostUserAccount implements Task {
                                 .formParams(formParams)
                         )
         );
-
-        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     private void putIfNotNull(Map<String, Object> map, String key, Object value) {
